@@ -1,0 +1,3 @@
+phon,el,50.0,20
+pizza,food,100.0,0
+burger,food,100.0,2
