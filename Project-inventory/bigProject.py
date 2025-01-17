@@ -1,6 +1,5 @@
-import tkinter as tk
-from tkinter import messagebox
-from tkinter import simpledialog
+import customtkinter as ctk
+from tkinter import messagebox, simpledialog
 import matplotlib.pyplot as plt
 
 item_details = {
@@ -291,37 +290,36 @@ def generate_report():
     plt.show()
 
 def open_inventory_window():
-    inventory_window = tk.Toplevel()
+    inventory_window = ctk.CTkToplevel()
     inventory_window.title("Inventory Management")
     inventory_window.geometry("300x600")
-    tk.Button(inventory_window, text="Add Item", command=add_item).pack(fill='x')
-    tk.Button(inventory_window, text="Edit Item", command=edit_item).pack(fill='x')
-    tk.Button(inventory_window, text="Remove Item", command=remove_item).pack(fill='x')
-    tk.Button(inventory_window, text="Display Inventory", command=display_inventory).pack(fill='x')
-    tk.Button(inventory_window, text="Display In Terminal", command=display_Terminal).pack(fill='x')
-    tk.Button(inventory_window, text="Generate HTML", command=create_html_file).pack(fill='x')
+    ctk.CTkButton(inventory_window, text="Add Item", command=add_item).pack(fill='x')
+    ctk.CTkButton(inventory_window, text="Edit Item", command=edit_item).pack(fill='x')
+    ctk.CTkButton(inventory_window, text="Remove Item", command=remove_item).pack(fill='x')
+    ctk.CTkButton(inventory_window, text="Display Inventory", command=display_inventory).pack(fill='x')
+    ctk.CTkButton(inventory_window, text="Display In Terminal", command=display_Terminal).pack(fill='x')
+    ctk.CTkButton(inventory_window, text="Generate HTML", command=create_html_file).pack(fill='x')
 
 def open_order_window():
-    order_window = tk.Toplevel()
+    order_window = ctk.CTkToplevel()
     order_window.title("Order Management")
     order_window.geometry("300x400")
-    tk.Button(order_window, text="Create Order", command=create_order).pack(fill='x')
-    tk.Button(order_window, text="Update Order", command=update_order).pack(fill='x')
-    tk.Button(order_window, text="Delete Order", command=delete_order).pack(fill='x')
-    tk.Button(order_window, text="Generate Report", command=generate_report).pack(fill='x')
+    ctk.CTkButton(order_window, text="Create Order", command=create_order).pack(fill='x')
+    ctk.CTkButton(order_window, text="Update Order", command=update_order).pack(fill='x')
+    ctk.CTkButton(order_window, text="Delete Order", command=delete_order).pack(fill='x')
+    ctk.CTkButton(order_window, text="Generate Report", command=generate_report).pack(fill='x')
 
 def main():
     readInFile()
     
-    root = tk.Tk()
+    root = ctk.CTk()
     root.title("Inventory System")
     root.geometry("300x500") 
     
-    tk.Button(root, text="Inventory", command=open_inventory_window).pack(fill='x')
-    tk.Button(root, text="Order", command=open_order_window).pack(fill='x')
+    ctk.CTkButton(root, text="Inventory", command=open_inventory_window).pack(fill='x')
+    ctk.CTkButton(root, text="Order", command=open_order_window).pack(fill='x')
     
     root.mainloop()
 
 if __name__ == "__main__":
     main()
-
